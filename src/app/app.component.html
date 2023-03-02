@@ -20,24 +20,24 @@
 <div>点击文章测试不同路由传参：</div>
 <br />
 <a [routerLink]="['/detail', 1]"
-  >1. 文章1（路由路径中传递参数，链接：https://ip/detail/1）</a
+  >1. 文章1（路由路径中传参，链接：https://ip/detail/1）</a
 >
 <br />
 <a [routerLink]="['/detail']" [queryParams]="{ id: 2 }"
-  >2. 文章2（查询参数中传递数据，链接：https://ip/detail?id=2）</a
+  >2. 文章2（查询参数中传参，链接：https://ip/detail?id=2）</a
 >
 <br />
 <a (click)="toArticle3()"
-  >3. 文章3（路由配置中传递数据，链接：https://ip/detail/3）</a
+  >3. 文章3（路由配置中传参，链接：https://ip/detail/3）</a
 >
 <br />
 <a (click)="toArticle4()"
-  >4. 文章4（路由配置中传递数据，链接：https://ip/detail?id=4）</a
+  >4. 文章4（路由配置中传参，链接：https://ip/detail?id=4）</a
 >
 <br />
 <router-outlet></router-outlet>
 
-<h3>LocalStorage传参方式：</h3>
+<h3>LocalStorage方式：</h3>
 <app-c></app-c>
 <br />
 <app-d></app-d>
