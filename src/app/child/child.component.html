@@ -1,0 +1,18 @@
+<h2>父传子示例：</h2>
+<h3>@Input方式：</h3>
+<div>父组件传值内容：{{ childMsg }}</div>
+
+<hr />
+
+<h2>子传父示例：</h2>
+<h3>本地变量方式：</h3>
+<span>计数器：{{ count }}</span>
+
+<h3>@ViewChild方式：</h3>
+<span>计数器：{{ count }}</span>
+
+<h3>@Output方式：</h3>
+<label>输入项目名：<input type="text" #newItem /></label>
+<button type="button" (click)="addNewItem(newItem.value)">
+  添加项目到父组件
+</button>

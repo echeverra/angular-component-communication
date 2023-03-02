@@ -1,0 +1,44 @@
+<app-child [childMsg]="parentMsg" (newItemEvent)="addItem($event)" #child>
+</app-child>
+
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+<button type="button" (click)="child.addOne()" class="addOneBtn">加1</button>
+<button type="button" (click)="add(2)" class="addTwoBtn">加2</button>
+
+<hr />
+
+<h2>非关联组件示例：</h2>
+<h3>service服务方式：</h3>
+<app-a></app-a>
+<br />
+<app-b></app-b>
+
+<h3>路由传参方式：</h3>
+<div>点击文章测试不同路由传参：</div>
+<br />
+<a [routerLink]="['/detail', 1]"
+  >1. 文章1（路由路径中传递参数，链接：https://ip/detail/1）</a
+>
+<br />
+<a [routerLink]="['/detail']" [queryParams]="{ id: 2 }"
+  >2. 文章2（查询参数中传递数据，链接：https://ip/detail?id=2）</a
+>
+<br />
+<a (click)="toArticle3()"
+  >3. 文章3（路由配置中传递数据，链接：https://ip/detail/3）</a
+>
+<br />
+<a (click)="toArticle4()"
+  >4. 文章4（路由配置中传递数据，链接：https://ip/detail?id=4）</a
+>
+<br />
+<router-outlet></router-outlet>
+
+<h3>LocalStorage传参方式：</h3>
+<app-c></app-c>
+<br />
+<app-d></app-d>
+<br />
